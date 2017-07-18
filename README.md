@@ -15,13 +15,16 @@ Alpha - I do not recommend you running this on production sites.
 
 ## Todo
 
-- Add comment system
+In order of priority for me personally.
+
 - Add nav menu and replace static "About" and "Tools" (sorry hehe)
 - Widgetize footer (need to manually change social links and text in footer right now)
+- Add comment system
 - Sidebar:  No plans
 - Cleanup CSS
 - Cleanup HTML
 - Fix WordPress function references and optimize loop
+- Add post meta information, maybe.  It isn't in minimawp so I'm not sure I'll actually do it.  This is just here as a mindmap snippet.
 
 ## Contributing
 
