@@ -12,13 +12,13 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading"><?php bloginfo('site-title'); ?></h2>
+    <h2 class="footer-heading"><?php bloginfo('name'); ?></h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li>Widget1<br/><a href="mailto:<?php the_author_email(); ?>"><?php the_author_email(); ?></a></li>
-          <li><?php bloginfo('site-title'); ?></li>
+          <li><?php bloginfo('name'); ?></li>
         </ul>
       </div>
 

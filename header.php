@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title><?php bloginfo('site-title'); ?></title>
+  <title><?php bloginfo('name'); ?></title>
   <meta name="description" content="<?php bloginfo('site-description');?>">
 
   <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/style.css">
@@ -27,7 +27,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="<?php site_url(); ?>"><?php bloginfo('site-title');?></a>
+    <a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo('name');?></a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
