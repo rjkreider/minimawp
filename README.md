@@ -26,7 +26,14 @@ In order of priority for me personally.
 - Fix WordPress function references and optimize loop
 - Add post meta information, maybe.  It isn't in minimawp so I'm not sure I'll actually do it.  This is just here as a mindmap snippet.
 
+## Misc
+
+Currently I use W3C to validate HTML stuff while I'm hacking this up.
+
+- [https://validator.w3.org/nu/?doc=https%3A%2F%2Ftechish.net%2F](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftechish.net%2F)
+
 ## Contributing
 
 Feel free to contribute!
+
 
