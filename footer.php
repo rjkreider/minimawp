@@ -1,7 +1,7 @@
 
   <p class="rss-subscribe">subscribe <a href="/feed/">via RSS</a></p>
 
-<?php if (is_home() || is_archive() || is_search()) { ?>
+<?php if (is_home() || is_archive() || is_search() || is_404() ) { ?>
 </div>
 <?php } ?>
 
@@ -21,7 +21,7 @@ if(is_active_sidebar('footer-sidebar-1')){
 dynamic_sidebar('footer-sidebar-1');
 } else {
 ?>        <ul class="contact-list">
-          <li><a href="mailto:<?php the_author_email(); ?>"><?php the_author_email(); ?></a></li>
+          <li><a href="mailto:<?php the_author_meta('user_email'); ?>"><?php the_author_meta('user_email'); ?></a></li>
           <li><?php bloginfo('name'); ?></li>
         </ul>
 <?php 

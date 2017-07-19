@@ -59,7 +59,7 @@ echo strip_tags(wp_nav_menu($menuParam), '<a>');
 
     <div class="page-content">
       <div class="wrapper">
-<?php if (is_home() || is_archive() || is_search()) { ?>
+<?php if (is_home() || is_archive() || is_search() || is_404() ) { ?>
         <div class="home">
 <?php } ?>
 
