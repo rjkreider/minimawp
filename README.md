@@ -19,7 +19,7 @@ In order of priority for me personally.
 
 - ~~add nav menu and replace static "About" and "Tools" (sorry hehe)~~
 - Widgetize footer (need to manually change social links and text in footer right now)
-- Add comment system
+- ~~Add comment system~~
 - Sidebar:  No plans
 - Cleanup CSS
 - Cleanup HTML
