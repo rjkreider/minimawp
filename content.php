@@ -10,8 +10,9 @@
 	<?php the_content(); ?>
   </div>
 <?php
-if (get_option('theme_disqus') == 1 && get_option('disqus_shortname') != "") {
-$disqus_shortname=strip_tags(addslashes(get_option('disqus_shortname')));
+if (get_theme_mod('mwp_enable_disqus')==1 &&  get_theme_mod('mwp_disqus_shortname') != "") {
+echo "HI";
+$disqus_shortname=strip_tags(addslashes(get_theme_mod('mwp_disqus_shortname')));
 ?>
 <div id="disqus_thread"></div>
 <script>
