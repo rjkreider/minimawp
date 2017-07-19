@@ -39,9 +39,20 @@
       </a>
 
       <div class="trigger">
-          <a class="page-link" href="/about/">About</a>
-          <a class="page-link" href="/tools/">Tools</a>
-    </div>
+<?php
+
+$menuParam = array(
+'theme_location' => 'mwp-custom-menu',
+'container' => false,
+'echo' => false,
+'items_wrap' => '%3$s',
+'depth' => 0,
+);
+
+echo strip_tags(wp_nav_menu($menuParam), '<a>');
+
+?>
+    </div> 
 </nav>
   </div>
 </header>

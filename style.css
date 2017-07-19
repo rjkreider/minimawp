@@ -175,10 +175,10 @@ pre {
   line-height: 56px; }
   .site-nav .menu-icon {
     display: none; }
-  .site-nav .page-link {
+  .site-nav a, .site-nav .page-link {
     color: #111;
     line-height: 1.5; }
-    .site-nav .page-link:not(:last-child) {
+    .site-nav a:not(:last-child), .site-nav .page-link:not(:last-child) {
       margin-right: 20px; }
   @media screen and (max-width: 600px) {
     .site-nav {
@@ -208,11 +208,11 @@ pre {
       .site-nav:hover .trigger {
         display: block;
         padding-bottom: 5px; }
-      .site-nav .page-link {
+      .site-nav a, .site-nav .page-link {
         display: block;
         padding: 5px 10px;
         margin-left: 20px; }
-        .site-nav .page-link:not(:last-child) {
+        .site-nav a:not(:last-child) , .site-nav .page-link:not(:last-child) {
           margin-right: 0; } }
 
 /**
