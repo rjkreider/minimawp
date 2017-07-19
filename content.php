@@ -11,7 +11,6 @@
   </div>
 <?php
 if (get_theme_mod('mwp_enable_disqus')==1 &&  get_theme_mod('mwp_disqus_shortname') != "") {
-echo "HI";
 $disqus_shortname=strip_tags(addslashes(get_theme_mod('mwp_disqus_shortname')));
 ?>
 <div id="disqus_thread"></div>
