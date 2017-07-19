@@ -18,7 +18,7 @@ Alpha - I do not recommend you running this on production sites.
 In order of priority for me personally.
 
 - ~~add nav menu and replace static "About" and "Tools" (sorry hehe)~~
-- Widgetize footer (need to manually change social links and text in footer right now)
+- ~~Widgetize footer (need to manually change social links and text in footer right now)~~
 - ~~Add comment system~~
 - Sidebar:  No plans
 - Cleanup CSS

@@ -1,4 +1,5 @@
 <?php
+
 function mwp_custom_menu() {
         register_nav_menu('mwp-custom-menu',__('Top Menu'));
 }
@@ -35,7 +36,35 @@ $wp_customize->add_control('mwp_disqus_shortname', array(
 
 }
 
-
-
 add_action('customize_register', 'mwp_customize_register');
+
+
+
+register_sidebar( array(
+'name' => 'Footer Sidebar 1',
+'id' => 'footer-sidebar-1',
+'description' => 'Appears in the footer area',
+'before_widget' => '',
+'after_widget' => '',
+'before_title' => '<h3 class="widget-title">',
+'after_title' => '</h3>',
+) );
+register_sidebar( array(
+'name' => 'Footer Sidebar 2',
+'id' => 'footer-sidebar-2',
+'description' => 'Appears in the footer area',
+'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+'after_widget' => '</aside>',
+'before_title' => '<h3 class="widget-title">',
+'after_title' => '</h3>',
+) );
+register_sidebar( array(
+'name' => 'Footer Sidebar 3',
+'id' => 'footer-sidebar-3',
+'description' => 'Appears in the footer area',
+'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+'after_widget' => '</aside>',
+'before_title' => '<h3 class="widget-title">',
+'after_title' => '</h3>',
+) );
 

@@ -16,14 +16,27 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>Widget1<br/><a href="mailto:<?php the_author_email(); ?>"><?php the_author_email(); ?></a></li>
+<?php
+if(is_active_sidebar('footer-sidebar-1')){
+dynamic_sidebar('footer-sidebar-1');
+} else {
+?>        <ul class="contact-list">
+          <li><a href="mailto:<?php the_author_email(); ?>"><?php the_author_email(); ?></a></li>
           <li><?php bloginfo('name'); ?></li>
         </ul>
+<?php 
+}
+?>
       </div>
 
       <div class="footer-col footer-col-2">
-<p>Widget 2</p>
+
+<?php
+if(is_active_sidebar('footer-sidebar-2')){
+dynamic_sidebar('footer-sidebar-2');
+} else {
+// eventually add automatic fill of social links for at least twitter/github if user fills out settings in Customizer
+?>
         <ul class="social-media-list">
 
           <li>
@@ -41,11 +54,23 @@
           </li>
 
         </ul>
+<?php
+}
+?>
       </div>
 
       <div class="footer-col footer-col-3">
-        <p>I'm Widget3<br/><?php bloginfo('site-description');?></p>
+<?php
+if(is_active_sidebar('footer-sidebar-3')){
+dynamic_sidebar('footer-sidebar-3');
+} else {
+?>
+        <p><?php bloginfo('site-description');?></p>
+<?php
+}
+?>
       </div>
+
     </div>
 
   </div>
