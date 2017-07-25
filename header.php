@@ -46,7 +46,7 @@ $menuParam = array(
 'container' => false,
 'echo' => false,
 'items_wrap' => '%3$s',
-'depth' => 0,
+'depth' => 1,
 );
 
 echo strip_tags(wp_nav_menu($menuParam), '<a>');
