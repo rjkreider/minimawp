@@ -1,5 +1,4 @@
 
-  <p class="rss-subscribe">subscribe <a href="/feed/">via RSS</a></p>
 
 <?php if (is_home() || is_archive() || is_search() || is_404() ) { ?>
 </div>
