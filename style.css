@@ -111,7 +111,7 @@ code {
 
 pre {
   padding: 8px 12px;
-  overflow-x: auto; }
+  overflow-x: auto; max-height:400px;}
   pre > code {
     border: 0;
     padding-right: 0;
@@ -464,3 +464,154 @@ pre {
     color: #008080; }
   .highlight .il {
     color: #099; }
+
+#searchsubmit { display:none!important; }
+
+.content-box-blue,
+.content-box-gray,
+.content-box-green,
+.content-box-purple,
+.content-box-red,
+.content-box-yellow {
+    margin: 0 0 25px;
+    overflow: hidden;
+    padding: 20px;
+}
+ 
+.content-box-blue {
+    background-color: #d8ecf7;
+    border: 1px solid #afcde3;
+}
+ 
+.content-box-gray {
+    background-color: #e2e2e2;
+    border: 1px solid #bdbdbd;
+}
+ 
+.content-box-green {
+    background-color: #d9edc2;
+    border: 1px solid #b2ce96;
+}
+ 
+.content-box-purple {
+    background-color: #e2e2f9;
+    border: 1px solid #bebde9;
+}
+ 
+.content-box-red {
+    background-color: #f9dbdb;
+    border: 1px solid #e9b3b3;
+}
+ 
+.content-box-yellow {
+    background-color: #fef5c4;
+    border: 1px solid #fadf98;
+}
+a img:hover, img:hover { text-decoration:none; border-bottom:none!important; }
+.border-container {
+  width: 28%; /* border will be on the left on this container */
+  float: right;
+  overflow: hidden; /* only needed if floating container */
+  min-height: 600px; /* static height if you want your container to be taller than its content */
+  -moz-box-shadow: inset 15px 0 5px -16px rgba(0,0,0,.1), -1px 0 0 #FFF;
+  -webkit-box-shadow: inset 15px 0 5px -16px rgba(0,0,0,.1), -1px 0 0 #FFF;
+  box-shadow: inset 15px 0 5px -16px rgba(0,0,0,.1), -1px 0 0 #FFF;
+  border-width: 0 0 0 1px;
+  -webkit-border-image: 
+    -webkit-gradient(linear, 0 100%, 0 0, from(rgba(0,0,0,.09)), to(rgba(0,0,0,0))) 1 100%;
+  -webkit-border-image: 
+    -webkit-linear-gradient(top, rgba(0,0,0,.09), rgba(0,0,0,0)) 1 100%;
+  -moz-border-image:
+    -moz-linear-gradient(top, rgba(0,0,0,.09), rgba(0,0,0,0)) 1 100%;    
+}
+.bot-left {
+  position: relative;
+}
+.bot-left:before, .bot-left:after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: -3px;
+  
+}
+.bot-left:before {
+  top: -3px;
+  width: 3px;
+  background-image: -webkit-gradient(linear, 0 100%, 0 0, from(#000), to(transparent));
+  background-image: -webkit-linear-gradient(transparent, #000);
+  background-image: -moz-linear-gradient(transparent, #000);
+  background-image: -o-linear-gradient(transparent, #000);
+}
+.bot-left:after {
+  right: -3px;
+  height: 3px;
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#000), to(transparent));
+  background-image: -webkit-linear-gradient(left, #000, transparent);
+  background-image: -moz-linear-gradient(left, #000, transparent);
+  background-image: -o-linear-gradient(left, #000, transparent);
+}
+
+ol.commentlist { list-style:none; margin:0 0 1em; padding:0; text-indent:0; }
+ol.commentlist li { }
+ol.commentlist li.alt { }
+ol.commentlist li.bypostauthor {}
+ol.commentlist li.byuser {}
+ol.commentlist li.comment-author-admin {}
+ol.commentlist li.comment { border-bottom:1px dotted #666; padding:1em; }
+ol.commentlist li.comment div.comment-author {}
+ol.commentlist li.comment div.vcard { font:normal 16px georgia,times,serif; }
+ol.commentlist li.comment div.vcard cite.fn { font-style:normal; }
+ol.commentlist li.comment div.vcard cite.fn a.url {}
+ol.commentlist li.comment div.vcard img.avatar { border:5px solid #ccc; float:right; margin:0 0 1em 1em; }
+ol.commentlist li.comment div.vcard img.avatar-32 {}
+ol.commentlist li.comment div.vcard img.photo {}
+ol.commentlist li.comment div.vcard span.says {}
+ol.commentlist li.comment div.commentmetadata {}
+ol.commentlist li.comment div.comment-meta { font-size:.8em; }
+ol.commentlist li.comment div.comment-meta a { color:#ccc; }
+ol.commentlist li.comment p { font-size:1em; margin:0 0 1em; }
+ol.commentlist li.comment ul { font-size:1em; list-style:square; margin:0 0 1em 2em; }
+ol.commentlist li.comment div.reply { font-size:1em; }
+ol.commentlist li.comment div.reply a { font-weight:bold; }
+ol.commentlist li.comment ul.children { list-style:none; margin:1em 0 0; text-indent:0; }
+ol.commentlist li.comment ul.children li {}
+ol.commentlist li.comment ul.children li.alt {}
+ol.commentlist li.comment ul.children li.bypostauthor {}
+ol.commentlist li.comment ul.children li.byuser {}
+ol.commentlist li.comment ul.children li.comment {}
+ol.commentlist li.comment ul.children li.comment-author-admin {}
+ol.commentlist li.comment ul.children li.depth-2 { border-left:5px solid #555; margin:0 0 .25em .25em; }
+ol.commentlist li.comment ul.children li.depth-3 { border-left:5px solid #999; margin:0 0 .25em .25em; }
+ol.commentlist li.comment ul.children li.depth-4 { border-left:5px solid #bbb; margin:0 0 .25em .25em; }
+ol.commentlist li.comment ul.children li.depth-5 {}
+ol.commentlist li.comment ul.children li.odd {}
+ol.commentlist li.even { background:#fff; }
+ol.commentlist li.odd { background:#f6f6f6; }
+ol.commentlist li.parent { border-left:5px solid #111; }
+ol.commentlist li.thread-alt { }
+ol.commentlist li.thread-even {}
+ol.commentlist li.thread-odd {}
+
+#comment textarea {width:100%!important; height:250px; }
+#comments h3 { font-weight:bold; font-size: 1.2em; }
+#comments > h3{ font-weight:bold!important; }
+#commentsubmit {
+display:button;
+border-radius: 5px;
+
+  background-color: #ffffff; /* Green */
+border: 2px solid #008CBA;
+    color: #008CBA;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+ -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+#commentsubmit:hover {
+ background-color: #008CBA; /* Green */
+    color: white;
+}
+body { word-wrap:break-word; }

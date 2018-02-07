@@ -1,11 +1,12 @@
-
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
+  <?php
+if (!is_page()) {
+?><header class="post-header">
     <h1 class="post-title" itemprop="name headline"><?php the_title(); ?></h1>
     <p class="post-meta"><time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>" itemprop="datePublished"><?php the_date(); ?></time></p>
   </header>
-
+<?php } ?>
   <div class="post-content" itemprop="articleBody">
 	<?php the_content(); ?>
   </div>
@@ -13,6 +14,7 @@
 if (get_theme_mod('mwp_enable_disqus')==1 &&  get_theme_mod('mwp_disqus_shortname') != "") {
 $disqus_shortname=strip_tags(addslashes(get_theme_mod('mwp_disqus_shortname')));
 ?>
+<hr/><h2 style="font-weight:bolder;">Comments</h2>
 <div id="disqus_thread"></div>
 <script>
 var disqus_config = function () {
@@ -31,6 +33,10 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 <?php
 }
-?></article>
+?>
+<?php
+comments_template('/comments.php', $separate_comments=true); 
+?>
+</article>
 
 <?php get_footer(); ?>

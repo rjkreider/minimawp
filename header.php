@@ -10,13 +10,14 @@
   <meta name="description" content="<?php bloginfo('site-description');?>">
 
   <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/style.css">
-
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900" rel="stylesheet">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+<meta name="theme-color" content="#ffffff">
 <?php wp_head(); ?>
 
 </head>
@@ -47,14 +48,20 @@ $menuParam = array(
 'echo' => false,
 'items_wrap' => '%3$s',
 'depth' => 1,
+'exclude' => 71,
 );
 
 echo strip_tags(wp_nav_menu($menuParam), '<a>');
 
 ?>
+<div style="float:right;display:inline;">
+<?php get_search_form(); ?></div>
+
     </div> 
-</nav>
   </div>
+</nav>
+
+
 </header>
 
     <div class="page-content">
