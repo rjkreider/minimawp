@@ -20,13 +20,15 @@ endwhile; endif;
 <?php if (is_home() || is_archive() || is_search() || is_404()) { ?>  </ul> <?php } ?>
 <?php
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-$the_query = new WP_Query( 'posts_per_page=5&paged=' . $paged ); 
+//$the_query = new WP_Query( 'posts_per_page=5&paged=' . $paged ); 
+$the_query = new WP_Query( 'paged=' . $paged ); 
 
 
 if ( $the_query->have_posts() ) :
 
     // the loop
-/**    while ( $the_query->have_posts() ) : $the_query->the_post(); 
+/**
+    while ( $the_query->have_posts() ) : $the_query->the_post(); 
         the_title();
     endwhile; 
 **/
