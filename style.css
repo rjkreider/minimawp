@@ -556,11 +556,12 @@ ol.commentlist li { }
 ol.commentlist li.alt { }
 ol.commentlist li.bypostauthor {}
 ol.commentlist li.byuser {}
-ol.commentlist li.comment-author-admin {}
+ol.commentlist li.comment-author-admin { }
+ol.commentlist li.comment-author-admin div.comment-author {}
 ol.commentlist li.comment { border-bottom:1px dotted #666; padding:1em; }
 ol.commentlist li.comment div.comment-author {}
-ol.commentlist li.comment div.vcard { font:normal 16px georgia,times,serif; }
-ol.commentlist li.comment div.vcard cite.fn { font-style:normal; }
+ol.commentlist li.comment div.vcard { font:normal 16px; }
+ol.commentlist li.comment div.vcard cite.fn { font-style:normal;font-weight:bold; }
 ol.commentlist li.comment div.vcard cite.fn a.url {}
 ol.commentlist li.comment div.vcard img.avatar { border:5px solid #ccc; float:right; margin:0 0 1em 1em; }
 ol.commentlist li.comment div.vcard img.avatar-32 {}
@@ -616,4 +617,4 @@ border: 2px solid #008CBA;
     color: white;
 }
 body { word-wrap:break-word; }
-
+.wp-caption-text { font-style:italic; font-size:small; }
