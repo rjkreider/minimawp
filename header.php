@@ -28,7 +28,9 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo('name');?></a>
+    <a class="site-title"  href="<?php echo esc_url( home_url( '/' ) ); ?>">
+<?php bloginfo('name');?>
+</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
