@@ -17,10 +17,7 @@
 if(is_active_sidebar('footer-sidebar-1')){
 dynamic_sidebar('footer-sidebar-1');
 } else {
-?>        <ul class="contact-list">
-          <li><a href="mailto:<?php the_author_meta('user_email'); ?>"><?php the_author_meta('user_email'); ?></a></li>
-          <li><?php bloginfo('name'); ?></li>
-        </ul>
+?>
 <?php 
 }
 ?>
