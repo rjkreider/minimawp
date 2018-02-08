@@ -618,3 +618,4 @@ border: 2px solid #008CBA;
 }
 body { word-wrap:break-word; }
 .wp-caption-text { font-style:italic; font-size:small; }
+.nocomments { display:none; }

@@ -24,7 +24,7 @@ $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $the_query = new WP_Query( 'paged=' . $paged ); 
 
 
-if ( $the_query->have_posts() ) :
+if ( $the_query->have_posts() && !is_page() ) :
 
     // the loop
 /**
