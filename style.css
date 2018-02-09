@@ -621,3 +621,4 @@ body { word-wrap:break-word; }
 .wp-caption-text { font-style:italic; font-size:small; }
 .nocomments { display:none; }
 .category-title { font-weight:bold; }
+.navsearchform { float:right;display:inline; }

@@ -41,28 +41,26 @@
         </svg>
       </a>
 
-      <div class="trigger">
-<?php
+	 <div class="trigger">
+		<?php
+		$menuParam = array(
+			'theme_location' => 'mwp-custom-menu',
+			'container' => false,
+			'echo' => false,
+			'items_wrap' => '%3$s',
+			'depth' => 1,
+			'exclude' => 71,
+			);
 
-$menuParam = array(
-'theme_location' => 'mwp-custom-menu',
-'container' => false,
-'echo' => false,
-'items_wrap' => '%3$s',
-'depth' => 1,
-'exclude' => 71,
-);
+		echo strip_tags(wp_nav_menu($menuParam), '<a>');
+		?>
 
-echo strip_tags(wp_nav_menu($menuParam), '<a>');
-
-?>
-<div style="float:right;display:inline;">
-<?php get_search_form(); ?></div>
-
-    </div> 
-  </div>
+		<div class="navsearchform">
+			<?php get_search_form(); ?>
+		</div>
+	</div> 
 </nav>
-
+</div>
 
 </header>
 
