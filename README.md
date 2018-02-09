@@ -3,7 +3,7 @@ Jekyll Minima Theme ported to WordPress
 
 ## Demo
 
-I'm currently developing and using this WordPress theme on [https://kreider.io/](https://kreider.io/)
+I'm currently developing and using this WordPress theme on [https://techish.net/](https://techish.net/)
 
 ## Why?
 

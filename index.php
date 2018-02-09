@@ -1,10 +1,19 @@
 <?php get_header(); ?>
 
+
 <?php if (is_home() || is_archive() || is_search() || is_404() ) {
+
+if (is_category()) {
+$categories = get_the_category();
+?>
+        <h2 class="category-title">Category: <?php echo $categories[0]->name; ?></h2>
+<?php
+}
+
+
 ?>  <ul class="post-list"> <?php } ?>
 <?php
 if (have_posts() ) : while (have_posts() ) : the_post();
-
 if (is_home() || is_archive() || is_search() || is_404() ) {
 ?>
 	<li>
