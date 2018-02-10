@@ -622,3 +622,4 @@ body { word-wrap:break-word; }
 .nocomments { display:none; }
 .category-title { font-weight:bold; }
 .navsearchform { float:right;display:inline; }
+.breadcrumbs { padding-bottom: 20px; }
