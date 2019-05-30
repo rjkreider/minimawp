@@ -623,3 +623,27 @@ body { word-wrap:break-word; }
 .category-title { font-weight:bold; }
 .navsearchform { float:right;display:inline; }
 .breadcrumbs { padding-bottom: 20px; }
+
+.categories{
+    column-count: 3;
+    column-gap: 50px;
+}
+
+pre {
+  font-family: monospace;
+  margin: 4em auto;
+  padding: 1em;
+  border-radius: .25em;
+  box-shadow: .1em .1em .5em rgba(0,0,0,.45);
+  counter-reset: line;
+	overflow-x: hidden;
+	white-space:pre-wrap;
+}  
+ 
+pre {
+  counter-increment: line;
+}
+
+#commentsubmit { color: #2a7ae2; border-color: #2a7ae2; cursor:pointer!important;}
+
+#commentsubmit:hover { color: #efefef; background-color:#2a7ae2; }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   <head>
   <meta charset="utf-8">
@@ -19,7 +19,7 @@
 
 <meta name="theme-color" content="#ffffff">
 <?php wp_head(); ?>
-
+<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
   <body>

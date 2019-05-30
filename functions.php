@@ -80,3 +80,26 @@ function disable_self_ping( &$links ) {
  unset($links[$l]);
 }
 add_action( 'pre_ping', 'disable_self_ping' );
+
+
+// Disable Embeds
+function my_deregister_scripts(){
+ wp_dequeue_script( 'wp-embed' );
+}
+add_action( 'wp_footer', 'my_deregister_scripts' );
+
+
+// Remove type=text/javascript or text/css on links/script tags
+add_action('wp_loaded', 'output_buffer_start');
+function output_buffer_start() { 
+    ob_start("output_callback"); 
+}
+
+add_action('shutdown', 'output_buffer_end');
+function output_buffer_end() { 
+    ob_end_flush(); 
+}
+
+function output_callback($buffer) {
+    return preg_replace( "%[ ]type=[\'\"]text\/(javascript|css)[\'\"]%", '', $buffer );
+}
