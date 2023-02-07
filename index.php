@@ -41,8 +41,12 @@ if ( $the_query->have_posts() && !is_page() ) :
         the_title();
     endwhile; 
 **/
-next_posts_link( '&laquo; Older Posts ', $the_query->max_num_pages );
-previous_posts_link( ' <span style="float:right;">Newer Posts &raquo;</span>' );
+if (get_next_posts_link()) :
+	next_posts_link( '&laquo; Older Posts ', $the_query->max_num_pages );
+endif;
+if (get_previous_posts_link()) :
+	previous_posts_link( ' <span style="float:right;">Newer Posts &raquo;</span>' );
+endif;
 
 // clean up after our query
 wp_reset_postdata();

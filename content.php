@@ -12,7 +12,19 @@
 if (!is_page()) {
 ?><header class="post-header">
     <h1 class="post-title" itemprop="name headline"><?php the_title(); ?></h1>
-    <p class="post-meta"><time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>" itemprop="datePublished"><?php the_date(); ?></time></p>
+    <p class="post-meta"><time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>" itemprop="datePublished"><?php the_date(); ?></time> /
+<?php
+$categories = get_the_category();
+$separator = ', ';
+$output = '';
+if ( ! empty( $categories ) ) {
+	foreach( $categories as $category ) {
+		$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+	}
+	echo trim( $output, $separator );
+}
+?> 
+ </p>
   </header>
 <?php } ?>
   <div class="post-content" itemprop="articleBody">
