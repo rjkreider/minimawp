@@ -19,6 +19,12 @@ if (is_home() || is_archive() || is_search() || is_404() ) {
 	<li>
 	<span class="post-meta"><?php the_date(); ?></span>
 	<h2><a class="post-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+<?php
+$excerpt = get_the_excerpt();
+echo excerpt_first_sentence($excerpt);
+?>
+  <a href="<?php the_permalink(); ?>">read more &raquo;</a>
+
 	</li>
 <?php
 } else {

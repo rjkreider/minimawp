@@ -103,3 +103,61 @@ function output_buffer_end() {
 function output_callback($buffer) {
     return preg_replace( "%[ ]type=[\'\"]text\/(javascript|css)[\'\"]%", '', $buffer );
 }
+
+function excerpt_first_sentencex( $string ) {
+ 
+    $sentence = preg_split( '/(\.|!|\?)\s/', $string, 2, PREG_SPLIT_DELIM_CAPTURE );
+    return $sentence['0'] . $sentence['1'];
+ 
+}
+
+function excerpt_first_sentence($string) {
+    $split = preg_split('/(\.|\!|\?)/', $string, 3, PREG_SPLIT_DELIM_CAPTURE);
+    $custom_desc = implode('', array_slice($split, 0, 4));
+
+    return $custom_desc;
+}
+function xwp_trim_excerpt($text) { // Fakes an excerpt if needed
+    global $post;
+    if ( '' == $text ) {
+        $text = get_the_content('');
+        $text = apply_filters('the_content', $text);
+        $text = str_replace('\]\]\>', ']]&gt;', $text);
+        $text = strip_tags($text);
+        $excerpt_length = 55;
+        $words = explode(' ', $text, $excerpt_length + 1);
+        if (count($words)> $excerpt_length) {
+            array_pop($words);
+            array_push($words, '[...]');
+            $text = implode(' ', $words);
+        }
+    }
+    return $text;
+}
+
+function lt_html_excerpt($text) { // Fakes an excerpt if needed
+    global $post;
+    if ( '' == $text ) {
+        $text = get_the_content('');
+        $text = apply_filters('the_content', $text);
+        $text = str_replace('\]\]\>', ']]&gt;', $text);
+        /*just add all the tags you want to appear in the excerpt --
+        be sure there are no white spaces in the string of allowed tags */
+        $text = strip_tags($text,'<p><br><b><a><em><strong><code><pre><kbd>');
+        /* you can also change the length of the excerpt here, if you want */
+        $excerpt_length = 55; 
+        $words = explode(' ', $text, $excerpt_length + 1);
+        if (count($words)> $excerpt_length) {
+            array_pop($words);
+            array_push($words, '[...]');
+            $text = implode(' ', $words);
+        }
+    }
+    return $text;
+}
+
+/* remove the default filter */
+remove_filter('get_the_excerpt', 'xwp_trim_excerpt');
+
+/* now, add your own filter */
+add_filter('get_the_excerpt', 'lt_html_excerpt');
