@@ -26,11 +26,12 @@
 
     <header class="site-header">
 
-  <div class="wrapper">
-
-    <a class="site-title"  href="<?php echo esc_url( home_url( '/' ) ); ?>">
+  <div class="wrapper" style="display:flex; justify-content: space-between; width:100%;align-items:center;">
+<div style="display:flex; flex-direction:column;">    <a class="site-title"  href="<?php echo esc_url( home_url( '/' ) ); ?>" style="margin-bottom:0;padding-bottom:0!important;line-height:1em;padding-top:.5em;">
 <?php bloginfo('name');?>
-</a>
+</a></span>
+<span style="font-style: italic;margin-bottom: .5em;font-size: smaller;margin-top:0;"><?php bloginfo('description');?></span>
+</div>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">

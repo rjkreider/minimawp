@@ -24,6 +24,12 @@ if ( ! empty( $categories ) ) {
 	echo trim( $output, $separator );
 }
 ?> 
+<?php
+if( function_exists( 'mpdf_pdfbutton' ) ) {
+echo " / ";
+mpdf_pdfbutton();
+}
+?>
  </p>
   </header>
 <?php } ?>
