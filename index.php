@@ -4,12 +4,18 @@
 <?php if (is_home() || is_archive() || is_search() || is_404() ) {
 
 if (is_category()) {
-$categories = get_the_category();
+//$categories = get_the_category();
+//$categories = single_cat_title();
 ?>
-        <h2 class="category-title">Category: <?php echo $categories[0]->name; ?></h2>
+        <h2 class="category-title">Category: <?php echo single_cat_title(); ?></h2>
 <?php
 }
 
+if (is_tag()) {
+?>
+<h2 class="category-title">Tag: <?php single_term_title(); ?></h2>
+<?php
+}
 
 ?>  <ul class="post-list"> <?php } ?>
 <?php
