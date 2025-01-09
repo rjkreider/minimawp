@@ -2,7 +2,10 @@
 
 
 <?php if (is_home() || is_archive() || is_search() || is_404() ) {
-
+if (is_search()) {
+?><h2>Search results for "<?php /* Search Count */ $allsearch = new WP_Query("s=$s&showposts=-1"); $key = wp_specialchars($s, 1); $count = $allsearch->post_count; _e(''); _e('<span class="search-terms">'); echo $key; _e('</span>"'); _e(' &mdash; '); echo $count . ' '; _e('articles'); wp_reset_query();
+}
+?></h2><?php
 if (is_category()) {
 //$categories = get_the_category();
 //$categories = single_cat_title();
@@ -24,13 +27,14 @@ if (is_home() || is_archive() || is_search() || is_404() ) {
 ?>
 	<li>
 	<span class="post-meta"><?php the_date(); ?></span>
-	<h2><a class="post-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+	<h2><a class="post-link" href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
 <?php
+if (get_theme_mod('mwp_enable_excerpt')==1) { 
 $excerpt = get_the_excerpt();
 echo excerpt_first_sentence($excerpt);
 ?>
-  <a href="<?php the_permalink(); ?>">read more &raquo;</a>
-
+  <a href="<?php the_permalink(); ?>" class="read-more-link">read more &raquo;</a>
+<?php } ?>
 	</li>
 <?php
 } else {

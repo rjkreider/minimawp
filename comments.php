@@ -63,8 +63,9 @@ _deprecated_file(
 
 	 <?php else : // comments are closed ?>
 		<!-- If comments are closed. -->
+<?php if(is_single()) { ?>
 		<p class="nocomments"><?php _e('Comments are closed.'); ?></p>
-
+<?php } ?>
 	<?php endif; ?>
 <?php endif; ?>
 

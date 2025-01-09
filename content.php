@@ -6,35 +6,57 @@
             bcn_display();
     ?> </div> <?php } ?>
 
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <?php
+<header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline"><?php the_title(); ?></h1>
+
+<?php
 if (!is_page()) {
-?><header class="post-header">
-    <h1 class="post-title" itemprop="name headline"><?php the_title(); ?></h1>
-    <p class="post-meta"><time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>" itemprop="datePublished"><?php the_date(); ?></time> /
-<?php
-$categories = get_the_category();
-$separator = ', ';
-$output = '';
-if ( ! empty( $categories ) ) {
-	foreach( $categories as $category ) {
-		$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
-	}
-	echo trim( $output, $separator );
-}
-?> 
-<?php
-if( function_exists( 'mpdf_pdfbutton' ) ) {
-echo " / ";
-mpdf_pdfbutton();
-}
 ?>
+    <p class="post-meta"><time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>" itemprop="datePublished" class="dt-published"><?php the_date(); ?></time>
+
  </p>
   </header>
 <?php } ?>
+</header>
   <div class="post-content" itemprop="articleBody">
 	<?php the_content(); ?>
+<?php 
+
+if (get_theme_mod('mwp_enable_postmeta')==1) {
+
+// Get the categories for the current post
+$categories = get_the_category();
+$tags = get_the_tags();
+
+if ($categories || $tags) : 
+?>
+    <div class="post-meta-footer">
+        <!-- Categories section -->
+        <?php if ($categories) : ?>
+            <div class="post-categories">
+                <?php foreach ($categories as $category) : ?>
+                    <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>" class="category-item">
+                        <?php echo esc_html($category->name); ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+
+        <!-- Tags section -->
+        <?php if ($tags) : ?>
+            <div class="post-tags">
+                <?php foreach ($tags as $tag) : ?>
+                    <a href="<?php echo esc_url(get_tag_link($tag->term_id)); ?>" class="tag-item">#<?php echo esc_html($tag->name); ?></a>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+<?php endif;
+
+} ?>
+
   </div>
 <?php
 if (get_theme_mod('mwp_enable_disqus')==1 &&  get_theme_mod('mwp_disqus_shortname') != "") {
