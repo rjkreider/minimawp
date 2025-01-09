@@ -35,29 +35,54 @@
 
 	 <div class="trigger">
 <?php
+// Define menu parameters
 $menuParam = array(
     'theme_location' => 'mwp-custom-menu',
     'container' => false,
     'echo' => false,
-    'items_wrap' => '%3$s', // Outputs the menu items without wrapping <ul>
+    'items_wrap' => '%3$s', // Outputs only the menu items without wrapping <ul>
     'depth' => 1,
-    'exclude' => 71,
 );
 
-// Filter to modify the <a> tags
-add_filter('nav_menu_link_attributes', function ($atts, $item, $args) {
+add_filter('nav_menu_link_attributes', 'time_thief_custom_menu_link_attributes', 10, 3);
+function time_thief_custom_menu_link_attributes($atts, $item, $args)
+{
     // Check if this is the correct menu
-    if ($args->theme_location === 'mwp-custom-menu') {
+    if (isset($args->theme_location) && $args->theme_location === 'mwp-custom-menu') {
         $atts['class'] = (isset($atts['class']) ? $atts['class'] . ' ' : '') . 'page-link';
     }
     return $atts;
-}, 10, 3);
+}
 
-// Render the menu
 $menu = wp_nav_menu($menuParam);
 
-// Strip <li> tags but keep <a> with the class
-echo strip_tags($menu, '<a>');
+$allowed_html = array(
+    'a' => array(
+        'href' => array(),
+        'class' => array(),
+        'title' => array(),
+    ),
+    'form' => array(
+        'role' => array(),
+        'method' => array(),
+        'id' => array(),
+        'action' => array(),
+    ),
+    'input' => array(
+        'type' => array(),
+        'placeholder' => array(),
+        'name' => array(),
+        'id' => array(),
+        'value' => array(),
+    ),
+);
+if ($menu) {
+if (get_theme_mod('mwp_enable_search')==1) {
+   $searchMenuItem = '<form role="search" method="get" id="menu-search-form" action="'. home_url('/') . '"><input type="search" placeholder="&#x1F50E;&#xFE0E;Search..." name="s" id="menu-search-input" value></form>';
+   $menu .= $searchMenuItem;
+}
+echo wp_kses($menu,$allowed_html);
+}
 ?>
 
 	</div> 

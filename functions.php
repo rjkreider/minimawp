@@ -11,6 +11,12 @@ $wp_customize->add_section('mwp_options', array(
 'title'		=> 'Theme Options',
 'priority'	=> 200
 ));
+
+$wp_customize->add_setting('mwp_enable_search', array(
+'default' => '1',
+'transport' => 'refresh'
+));
+
 $wp_customize->add_setting('mwp_enable_excerpt', array(
 'default' => '1',
 'transport' => 'refresh'
@@ -43,6 +49,13 @@ $wp_customize->add_control('mwp_disqus_shortname', array(
 'type'		=> 'text',
 ));
 
+
+$wp_customize->add_control('mwp_enable_search', array(
+'section' => 'mwp_options',
+'label' => 'Enable search in nav?',
+'type' => 'checkbox',
+'default' => '1',
+));
 
 $wp_customize->add_control('mwp_enable_excerpt', array(
 'section' => 'mwp_options',
@@ -253,3 +266,4 @@ add_action( 'wp_enqueue_scripts', function() {
 } );
 
 add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+

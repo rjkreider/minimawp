@@ -863,3 +863,22 @@ text-transform: initial!important;
 .nav-trigger {
 display: none;
 }
+#wp-block-search__input-1,.wp-block-search__input {
+font-size: .9em;
+padding: .25em;
+}
+.wp-block-search__label {
+display: none;
+}
+#menu-search-form {
+	float:right;
+}
+#menu-search-input {
+	max-width: 125px;
+	padding: .25em;
+	font-size: .9em;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: solid 2px #000;
+}
