@@ -17,6 +17,11 @@ get_header(); ?>
 
 					<?php get_search_form(); ?>
 </div>
+
+<?php
+echo do_shortcode('[abj404_solution_page_suggestions]'); ?>
+
+
 </article>
 
 <?php get_footer(); ?>

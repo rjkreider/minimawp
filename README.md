@@ -21,7 +21,7 @@ In order of priority for me personally.
 - ~~Widgetize footer (need to manually change social links and text in footer right now)~~
 - ~~Add comment system~~
 - Sidebar:  No plans
-- Cleanup CSS
+- ~~Cleanup CSS~~
 - Cleanup HTML
 - Fix WordPress function references and optimize loop
 - Add post meta information, maybe.  It isn't in minimawp so I'm not sure I'll actually do it.  This is just here as a mindmap snippet.
