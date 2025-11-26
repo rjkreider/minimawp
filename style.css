@@ -996,11 +996,14 @@ table td {
 
 .comment-form-comment #comment {
   background-color: var(--minima-code-background-color);
+  color: var(--minima-text-color);
+
 }
 
 .wp-block-search__input,
 #menu-search-input {
   background-color: var(--minima-code-background-color);
+  color: var(--minima-text-color);
 }
 
 .social-media-list {
@@ -1288,5 +1291,10 @@ display: none;
 	border-bottom: solid 2px #000;
 }
 
+#search-input {
+	background-color: var(--minima-code-background-color);
+	padding: 1em;
+	color:var( --minima-text-color);
+}
 
 /*# sourceMappingURL=auto.css.map */
