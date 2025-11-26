@@ -998,6 +998,10 @@ table td {
   background-color: var(--minima-code-background-color);
 }
 
+.wp-block-search__input,
+#menu-search-input {
+  background-color: var(--minima-code-background-color);
+}
 
 .social-media-list {
   display: table;
